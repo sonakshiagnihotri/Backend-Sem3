@@ -13,23 +13,6 @@ app.get('/',(req,res)=>{
     res.send('hihihihiiiii')
 })
 
-// Imagine someone submits this signup form:
-// {
-//   "name": "Sonakshi",
-//   "email": "sonakshiIsSoDamnCool@gmail.com",
-//   "passWord": "whyssonakshisodamncool123"
-// }
-// Your backend needs to:
-// Get this data.
-// Check whether sonakshiIsSoDamnCool@gmail.com already exists.
-// If yes → don't create another account.
-// If no → encrypt/hash the password.
-// Create a new user object.
-// Save it to MongoDB.
-// Tell the frontend that signup worked.
-
-// That's the thought process.
-
 app.post('/signUp',async(req,res)=>{
     let data= req.body;
     console.log(data,'users infooo')
@@ -52,23 +35,6 @@ app.post('/signUp',async(req,res)=>{
     res.send('mwahahah done')
         
 })
-
-// LOGIN
-//   ↓
-// Get email + password
-//   ↓
-// Find user by email
-//   ↓
-// Does user exist?
-//    ↓ NO → STOP ❌
-//    ↓ YES
-// Compare entered password
-//        with stored hash
-//           ↓
-//      Correct?
-//       ↓       ↓
-//     NO        YES
-//     ❌         ✅
 
 app.post('/login',async (req,res)=>{
     let {email,passWord}=req.body;
